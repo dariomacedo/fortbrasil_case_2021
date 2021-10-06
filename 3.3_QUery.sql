@@ -1,0 +1,20 @@
+USE database_time_engenharia_de_dados;
+
+SELECT 
+    V.ID_PESSOA, COUNT(V.ID_VENDA) AS QTD_COMPRAS_CLIENTES_MAR
+FROM
+    f_Vendas V
+        LEFT JOIN
+    d_Tempo T ON V.ID_TEMPO = T.ID_TEMPO
+WHERE
+    T.NU_MES = 3 AND T.NU_ANO = 2020 AND QTD_COMPRAS_CLIENTES_MAR = 0
+GROUP BY V.ID_PESSOA;
+
+
+
+
+
+
+
+
+
